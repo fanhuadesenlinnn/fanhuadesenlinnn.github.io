@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#6c599f">
+<meta name="generator" content="Hexo 5.4.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/lei2rock/CDN/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/lei2rock/CDN/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/lei2rock/CDN/images/favicon-16x16.png">
+  <link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/lei2rock/CDN/images/safari-pinned-tab.svg" color="#6c599f">
+  <meta name="google-site-verification" content="SJUudYL5q_atXSgew2qwy69FXOnSnNB2rAmwHmcBT9U">
+  <meta name="baidu-site-verification" content="wvc37nzEad">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fanhuadesenlinnn/CDN@1.0/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond:300,300italic,400,400italic,700,700italic%7CNoto+Serif+SC:300,300italic,400,400italic,700,700italic%7CLong+Cang:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.dlzhang.com","root":"/","images":"https://cdn.jsdelivr.net/gh/fanhuadesenlinnn/CDN@1.0/images","scheme":"Gemini","version":"8.3.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="目录 Linux 主流发行版 Redhat centos Ubuntu debian archlinux  Linux 启动流程 开机BIOS自检，加载硬盘。 读取MBR，MBR引导。 grub引导菜单(Boot Loader)。 加载内核kernel。 启动init进程，依据inittab文件设定运行级别。 init进程，执行rc.sysinit文件。 启动内核模块，执行不同级别的脚本程序。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 基础">
+<meta property="og:url" content="https://blog.dlzhang.com/posts/13/">
+<meta property="og:site_name" content="弈">
+<meta property="og:description" content="目录 Linux 主流发行版 Redhat centos Ubuntu debian archlinux  Linux 启动流程 开机BIOS自检，加载硬盘。 读取MBR，MBR引导。 grub引导菜单(Boot Loader)。 加载内核kernel。 启动init进程，依据inittab文件设定运行级别。 init进程，执行rc.sysinit文件。 启动内核模块，执行不同级别的脚本程序。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2011-02-27T01:34:36.000Z">
+<meta property="article:modified_time" content="2021-04-14T08:43:28.788Z">
+<meta property="article:author" content="曹恒源">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.dlzhang.com/posts/13/">
+
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+
+<link rel="preconnect" href="https://website-1256060851.file.myqcloud.com" crossorigin>
+<link rel="preconnect" href="https://sdn.geekzu.org" crossorigin>
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiangsudian/CaoMei/style.min.css">
+
+
+
+
+
+<script type="text/javascript">
+// Live2d
+// 注意：live2d_path 参数应使用绝对路径
+const live2d_path = "https://cdn.jsdelivr.net/gh/lei2rock/live2d-widget/";
+
+// 封装异步加载资源的方法
+function loadExternalResource(url, type) {
+	return new Promise((resolve, reject) => {
+		let tag;
+
+		if (type === "css") {
+			tag = document.createElement("link");
+			tag.rel = "stylesheet";
+			tag.href = url;
+		}
+		else if (type === "js") {
+			tag = document.createElement("script");
+			tag.src = url;
+		}
+		if (tag) {
+			tag.onload = () => resolve(url);
+			tag.onerror = () => reject(url);
+			document.head.appendChild(tag);
+		}
+	});
+}
+
+// 加载 waifu.css live2d.min.js waifu-tips.js
+if (screen.width >= 768) {
+	Promise.all([
+		loadExternalResource(live2d_path + "waifu.min.css", "css"),
+		loadExternalResource(live2d_path + "live2d.min.js", "js"),
+		loadExternalResource(live2d_path + "waifu-tips.min.js", "js")
+	]).then(() => {
+		initWidget({
+			waifuPath: live2d_path + "waifu-tips.json",
+			apiPath: "https://api.dlzhang.com/live2d/", // https://live2d.fghrsh.net/api/
+			//cdnPath: "https://cdn.jsdelivr.net/gh/fghrsh/live2d_api/"
+		});
+	});
+}
+// initWidget 第一个参数为 waifu-tips.json 的路径，第二个参数为 API 地址
+// API 后端可自行搭建，参考 https://github.com/fghrsh/live2d_api
+// 初始化看板娘会自动加载指定目录下的 waifu-tips.json
+
+console.log(`
+  く__,.ヘヽ.        /  ,ー､ 〉
+           ＼ ', !-─‐-i  /  /´
+           ／｀ｰ'       L/／｀ヽ､
+         /   ／,   /|   ,   ,       ',
+       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+          !,/7 '0'     ´0iソ|    |
+          |.从"    _     ,,,, / |./    |
+          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+              | |/i 〈|/   i  ,.ﾍ |  i  |
+             .|/ /  ｉ：    ﾍ!    ＼  |
+              kヽ>､ﾊ    _,.ﾍ､    /､!
+              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+                  ﾄ-,/  |___./
+                  'ｰ'    !_,.:
+`);
+// End Live2d Code
+
+window.addEventListener('load', () => {
+	console.log(`\n%c醉里挑灯赏猫%c班班 @lei2rock%c\n`, 'padding: 8px; background: #3f5973; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #649ab6; font-size: large; color: #eee;','');
+	console.log(`页面加载完毕消耗了${Math.round(performance.now() * 100) / 100}ms`);
+});
+
+</script>
+<title>Linux 基础 | 弈</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141207776-1"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-141207776-1');
+      }
+    </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="弈" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">弈</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fas fa-home fa-fw"></i>本站首页</a></li>
+        
+            
+  <li class="menu-item menu-item-overview"><a href="/overview/" rel="section"><i class="fas fa-archive fa-fw"></i>文章总览</a></li>
+
+
+      
+        <li class="menu-item menu-item-more"><a href="/more/" rel="section"><i class="fas fa-location-arrow fa-fw"></i>关于更多</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-%E4%B8%BB%E6%B5%81%E5%8F%91%E8%A1%8C%E7%89%88"><span class="nav-text">Linux 主流发行版</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B"><span class="nav-text">Linux 启动流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB"><span class="nav-text">Linux 运行级别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-%E7%9B%AE%E5%BD%95%E5%8F%8A%E4%BD%9C%E7%94%A8"><span class="nav-text">Linux 目录及作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="nav-text">Linux 中常见的文件系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-%E5%91%BD%E4%BB%A4"><span class="nav-text">Linux 命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-%E4%B8%AD%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%8F%8A%E8%A1%A8%E7%A4%BA%E7%AC%A6%E5%8F%B7"><span class="nav-text">Linux 中文件类型及表示符号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-text">Linux 删除文件的原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84buffer%E5%92%8Ccache%E5%8C%BA%E5%88%AB"><span class="nav-text">Linux 系统中的buffer和cache区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-%E4%B8%AD%E7%9A%84inode%E5%92%8Cblock"><span class="nav-text">Linux 中的inode和block</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux%E4%B8%AD%E8%BD%AF%E9%93%BE%E6%8E%A5%E5%92%8C%E7%A1%AC%E9%93%BE%E6%8E%A5%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">Linux中软链接和硬链接的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BF%AE%E5%A4%8Dfsck%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-text">Linux 文件系统修复fsck的过程</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="曹恒源"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">曹恒源</p>
+  <div class="site-description" itemprop="description">啦啦啦啦啦</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/overview/timeline">
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/overview/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/overview/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lei2rock" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lei2rock" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/13/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="曹恒源">
+      <meta itemprop="description" content="啦啦啦啦啦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="弈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux 基础
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发布：</span>
+
+      <time title="创建时间：2011-02-27 09:34:36" itemprop="dateCreated datePublished" datetime="2011-02-27T09:34:36+08:00">2011-02-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类：</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/overview/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <span id="more"></span>
+
+<p><strong>目录</strong></p>
+<h1 id="Linux-主流发行版"><a href="#Linux-主流发行版" class="headerlink" title="Linux 主流发行版"></a>Linux 主流发行版</h1><ul>
+<li>Redhat</li>
+<li>centos</li>
+<li>Ubuntu</li>
+<li>debian</li>
+<li>archlinux</li>
+</ul>
+<h1 id="Linux-启动流程"><a href="#Linux-启动流程" class="headerlink" title="Linux 启动流程"></a>Linux 启动流程</h1><ol>
+<li>开机BIOS自检，加载硬盘。</li>
+<li>读取MBR，MBR引导。</li>
+<li>grub引导菜单(Boot Loader)。</li>
+<li>加载内核kernel。</li>
+<li>启动init进程，依据<code>inittab</code>文件设定运行级别。</li>
+<li><code>init</code>进程，执行<code>rc.sysinit</code>文件。</li>
+<li>启动内核模块，执行不同级别的脚本程序。</li>
+<li>执行<code>/etc/rc.d/rc.local</code>。</li>
+<li>启动tty，进入系统登陆界面。</li>
+</ol>
+<h1 id="Linux-运行级别"><a href="#Linux-运行级别" class="headerlink" title="Linux 运行级别"></a>Linux 运行级别</h1><ol>
+<li>关机模式</li>
+<li>单用户模式&lt;==破解root密码</li>
+<li>无网络支持的多用户模式</li>
+<li>有网络支持的多用户模式（文本模式，工作中最常用的模式）</li>
+<li>保留，未使用</li>
+<li>有网络支持的X-windows支持多用户模式（桌面）</li>
+<li>重新引导系统，即重启</li>
+</ol>
+<h1 id="Linux-目录及作用"><a href="#Linux-目录及作用" class="headerlink" title="Linux 目录及作用"></a>Linux 目录及作用</h1><ul>
+<li><code>/bin</code> bin是Binary的缩写, 这个目录存放着最经常使用的命令。</li>
+<li><code>/boot</code> 这里存放的是启动Linux时使用的一些核心文件，包括一些连接文件以及镜像文件。</li>
+<li><code>/dev</code> dev是Device(设备)的缩写, 该目录下存放的是Linux的外部设备，在Linux中访问设备的方式和访问文件的方式是相同的。</li>
+<li><code>/etc</code> 这个目录用来存放所有的系统管理所需要的配置文件和子目录。</li>
+<li><code>/home</code> 用户的主目录，在Linux中，每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的。</li>
+<li><code>/lib</code> 这个目录里存放着系统最基本的动态连接共享库，其作用类似于Windows里的DLL文件。几乎所有的应用程序都需要用到这些共享库。</li>
+<li><code>/lost+found</code> 这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</li>
+<li><code>/media</code> linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，linux会把识别的设备挂载到这个目录下。</li>
+<li><code>/mnt</code> 系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在<code>/mnt/</code>上，然后进入该目录就可以查看光驱里的内容了。</li>
+<li><code>/opt</code> 这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</li>
+<li><code>/proc</code> 这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏- 蔽主机的ping命令，使别人无法ping你的机器：<code>echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all</code></li>
+<li><code>/root</code> 该目录为系统管理员，也称作超级权限者的用户主目录。</li>
+<li><code>/sbin</code> s就是Super User的意思，这里存放的是系统管理员使用的系统管理程序。</li>
+<li><code>/selinux</code> 这个目录是Redhat/CentOS所特有的目录，Selinux是一个安全机制，类似于windows的防火墙，但是这套机制比较复杂，这个目录就是存放selinux相关的文件的。</li>
+<li><code>/srv</code> 该目录存放一些服务启动之后需要提取的数据。</li>
+<li><code>/sys</code> 这是linux2.6内核的一个很大的变化。该目录下安装了2.6内核中新出现的一个文件系统 sysfs 。sysfs文件系统集成了下面3种文件系统的信息 - 针对进程信息的proc文件系统、针对设备的devfs文件系统以及针对伪终端的devpts文件系统。该文件系统是内核设备树的一个直观反映。当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中被创建。</li>
+<li><code>/tmp</code> 这个目录是用来存放一些临时文件的。</li>
+<li><code>/usr</code> 这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于windows下的program files目录。</li>
+<li><code>/usr/bin</code> 系统用户使用的应用程序。</li>
+<li><code>/usr/sbin</code> 超级用户使用的比较高级的管理程序和系统守护程序。</li>
+<li><code>/usr/src</code> 内核源代码默认的放置目录。</li>
+<li><code>/var</code> 这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。</li>
+<li><code>/run</code> 是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。如果你的系统上有 <code>/var/run</code> 目录，应该让它指向 run。</li>
+</ul>
+<h1 id="Linux-中常见的文件系统"><a href="#Linux-中常见的文件系统" class="headerlink" title="Linux 中常见的文件系统"></a>Linux 中常见的文件系统</h1><ul>
+<li>EXT3</li>
+<li>EXT4</li>
+<li>XFS</li>
+</ul>
+<h1 id="Linux-命令"><a href="#Linux-命令" class="headerlink" title="Linux 命令"></a><a target="_blank" rel="noopener" href="https://www.notion.so/Linux-1b17d4aee0be43f0b7f61c9950dcbb7f">Linux 命令</a></h1><ul>
+<li><p>tar</p>
+<p>  #压缩</p>
+<p>  tar -czvf ***.tar.gz</p>
+<p>  tar -cjvf ***.tar.bz2</p>
+<p>  #解压缩</p>
+<p>  tar -xzvf ***.tar.gz</p>
+<p>  tar -xjvf ***.tar.bz2</p>
+</li>
+</ul>
+<h1 id="Linux-中文件类型及表示符号"><a href="#Linux-中文件类型及表示符号" class="headerlink" title="Linux 中文件类型及表示符号"></a>Linux 中文件类型及表示符号</h1><ul>
+<li><strong>普通文件</strong> <code>-</code></li>
+<li><strong>目录</strong><code>d</code></li>
+<li><strong>符号链接</strong><code>l</code></li>
+<li>字符设备文件 <code>c</code></li>
+<li>块设备文件<code>b</code></li>
+<li>套接字<code>s</code></li>
+<li>命名管道<code>p</code></li>
+</ul>
+<h1 id="Linux-删除文件的原理"><a href="#Linux-删除文件的原理" class="headerlink" title="Linux 删除文件的原理"></a>Linux 删除文件的原理</h1><p>Linux系统是通过<code>link</code>的数量来控制文件删除的，只有当一个文件不存在任何<code>link</code>的时候，这个文件才会被删除。一般来说每个文件两个<code>link</code>计数器来控制：<code>i_count</code>和<code>i_nlink</code>。当一个文件被一个程序占用的时候<code>i_count</code>就加1。当文件的硬链接多一个的时候<code>i_nlink</code>也加1。删除一个文件，就是让这个文件，没有进程占用，同时<code>i_link</code>数量为0。</p>
+<h1 id="Linux-系统中的buffer和cache区别"><a href="#Linux-系统中的buffer和cache区别" class="headerlink" title="Linux 系统中的buffer和cache区别"></a><strong>Linux 系统中的<code>buffer</code>和<code>cache</code>区别</strong></h1><p>buffer和cache都是内存中的一块区域，当CPU需要写数据到磁盘时，由于磁盘速度比较慢，所以CPU先把数据存进buffer，然后CPU去执行其他任务，buffer中的数据会定期写入磁盘；当CPU需要从磁盘读入数据时，由于磁盘速度比较慢，可以把即将用到的数据提前存入cache，CPU直接从Cache中读取数据。</p>
+<h1 id="Linux-中的inode和block"><a href="#Linux-中的inode和block" class="headerlink" title="Linux 中的inode和block"></a>Linux 中的<code>inode</code>和<code>block</code></h1><p><code>inode</code>节点是一个64字节长的表，表中包含了文件的相关信息，如：字节数、属主<code>UserID</code>、属组<code>GroupID</code>、读写执行权限、时间戳等。在<code>inode</code>节点表中最重要的内容是：磁盘地址表。</p>
+<p>文件名存放在目录当中，但Linux系统内部不使用文件名，而是使用<code>inode</code>号码识别文件。对于系统来说文件名只是<code>inode</code>号码便于识别的别称。即Linux文件系统通过把<code>inode</code>和文件名进行关联来查找文件。当需要读取该文件时，文件系统在当前目录表中查找该文件名对应的项，由此得到该文件相对应的<code>inode</code>节点号，通过该<code>inode</code>节点的磁盘地址表把分散存放的文件物理块连接成文件的逻辑结构。</p>
+<p>文件是存储在硬盘上的，硬盘的最小存储单位叫做扇区<code>sector</code>，每个扇区存储512字节。操作系统读取硬盘的时候，不会一个个扇区地读取，这样效率太低，而是一次性连续读取多个扇区，即一次性读取一个块<code>block</code>。这种由多个扇区组成的块，是文件存取的最小单位。块的大小，最常见的是4KB，即连续八个<code>sector</code>组成一个<code>block</code>。</p>
+<p>即512字节组成一个扇区<code>sector</code>，多个扇区组成一个块<code>block</code>，常见的块单位4KB，即连续八个扇区组成一个<code>block</code>。</p>
+<p>一个文件必须占用一个<code>inode</code>，但至少占用一个<code>block</code>。</p>
+<h1 id="Linux中软链接和硬链接的区别"><a href="#Linux中软链接和硬链接的区别" class="headerlink" title="Linux中软链接和硬链接的区别"></a>Linux中软链接和硬链接的区别</h1><ul>
+<li><p><strong>软链接</strong></p>
+<p>  软连接类似于Windows的快捷方式功能的文件，可以快速连接到目标文件或目录。即再创建一个独立的文件，而这个文件会让数据的读取指向它连接的那个文件的文件名。例如，文件A和文件B的<code>inode</code>号码虽然不一样，但是文件A的内容是文件B的路径。读取文件A时，系统会自动将访问者导向文件B。这时，文件A就称为文件B的软链接。</p>
+<p>  因此，文件A依赖于文件B而存在，如果删除了文件B，打开文件A就会报错。</p>
+</li>
+<li><p><strong>硬链接</strong></p>
+<p>  通过文件系统的<code>inode</code>链接来产生的新的文件名，而不是产生新的文件，称为硬链接。</p>
+<p>  一般情况下，每个<code>inode</code>号码对应一个文件名，但是Linux允许多个文件名指向同一个<code>inode</code>号码。意味着可以使用不同的文件名访问相同的内容。创建硬链接，源文件与目标文件的inode号码相同，都指向同一个<code>inode</code>。<code>inode</code>信息中的链接数这时就会增加1。</p>
+</li>
+<li><p>当一个文件拥有多个硬链接时，对文件内容修改，会影响到所有其他文件的内容；</p>
+</li>
+<li><p>删除一个文件名，不影响另一个文件名的访问，删除一个文件名，只会使得inode中的链接数减1。</p>
+</li>
+<li><p>区别</p>
+<p>  软链接与硬链接最大的区别：软链接是文件A指向文件B的文件名，而不是文件B的<code>inode</code>号码，文件B的<code>inode</code>链接数不会因此发生变化。</p>
+</li>
+</ul>
+<p>不能对目录做硬链接，但是通过mkdir命令创建一个新目录，通常其硬链接数应该有2个，因为常见的目录本身为1个硬链接，而目录下面的隐藏目录.（点号）是该目录的又一个硬链接，也算是1个连接数。</p>
+<h1 id="Linux-文件系统修复fsck的过程"><a href="#Linux-文件系统修复fsck的过程" class="headerlink" title="Linux 文件系统修复fsck的过程"></a>Linux 文件系统修复<code>fsck</code>的过程</h1><p>成功修复文件系统的前提是要有两个以上的主文件系统（即两个系统），并保证在修复之前卸载将被修复的文件系统，然后使用命令fsck对受到破坏的文件系统进行修复。</p>
+<p>fsck检查文件系统分为5步，每一步检查系统不同部分的连接特性并对上一步进行验证和修改。</p>
+<p>检查从超级块开始、然后是分配的磁盘块、路径名、目录的连接性、链接数目以及空闲块链表、inode。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+
+<span style="margin-top:30px; color:var(--blockquote-color); font-size:0.85em">
+        <br>
+        <span class="post-end-item" title="copyright"">
+            <span class="post-end-item-icon" style="margin-right: 3px">
+                <i class="fab fa-fw fa-creative-commons"></i>
+            </span>
+            <span class="post-end-item-text">采用署名-非商业性使用-相同方式共享 4.0（CC BY-NC-SA 4.0）许可协议</span>
+        </span>
+</span>
+
+
+
+
+
+<div class="donations">
+    <div class="donation-label">喜欢这篇文章？为什么不考虑赞赏一下作者呢？</div>
+    <a class="afdian-button" href="https://afdian.net/@lei2rock" rel="nofollow noopener noreferrer" target="_blank">
+        <i class="fas fa-fw fa-bolt"></i>爱发电
+    </a>
+    <a class="paypal-button" href="https://paypal.me/lei2rock" rel="nofollow noopener noreferrer" target="_blank">
+        <i class="fab fa-fw fa-paypal"></i>Paypal
+    </a>
+</div>
+          <div class="post-tags">
+              <a href="/overview/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/15/" rel="prev" title="Centos 7 中的Yum">
+                  <i class="fa fa-chevron-left"></i> Centos 7 中的Yum
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/14/" rel="next" title="Linux 系统优化">
+                  Linux 系统优化 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fas fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">曹恒源</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fanhuadesenlinnn/CDN@1.0/js/utils.js"></script><script src="https://cdn.jsdelivr.net/gh/fanhuadesenlinnn/CDN@1.0/js/next-boot.js"></script><script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/fanhuadesenlinnn/CDN@1.0/js/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+    <div class="pjax">
+
+  
+
+
+
+
+
+<script type="text/javascript">
+if(window.location.hash){
+    var checkExist = setInterval(function() {
+        if ($(window.location.hash).length) {
+            $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+            clearInterval(checkExist);
+        }
+    }, 100);
+}
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+/* @license Minigrid v3.1.1 – https://cdn.jsdelivr.net/npm/minigrid@3.1.1/dist/minigrid.min.js */
+!function(t, e) {
+	"function" == typeof define && define.amd ? define(e) : "object" == typeof exports ? module.exports = e() : t.Minigrid = e()
+}(this, function(t) {
+	"use strict";
+	function e(t, e) {
+		for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
+		return t
+	}
+	var i = function(t) {
+			var i = t.container instanceof Node ? t.container : document.querySelector(t.container),
+				r = t.item instanceof NodeList ? t.item : i.querySelectorAll(t.item);
+			this.props = e(t, {
+				container: i,
+				nodeList: r
+			})
+		};
+	return i.prototype.mount = function() {
+		if (!this.props.container) return !1;
+		if (!this.props.nodeList || 0 === this.props.nodeList.length) return !1;
+		var t = "number" == typeof this.props.gutter && isFinite(this.props.gutter) && Math.floor(this.props.gutter) === this.props.gutter ? this.props.gutter : 0,
+			e = this.props.done,
+			i = this.props.container,
+			r = this.props.nodeList;
+		i.style.width = "";
+		var n = Array.prototype.forEach,
+			o = i.getBoundingClientRect().width,
+			s = r[0].getBoundingClientRect().width + t,
+			p = Math.max(Math.floor((o - t) / s), 1),
+			a = 0;
+		o = s * p + t + "px", i.style.width = o, i.style.position = "relative";
+		for (var c = [], u = [], l = 0; l < p; ++l) u.push(l * s + t), c.push(t);
+		this.props.rtl && u.reverse(), n.call(r, function(e) {
+			var i = c.slice(0).sort(function(t, e) {
+				return t - e
+			}).shift();
+			i = c.indexOf(i);
+			var r = parseInt(u[i]),
+				n = parseInt(c[i]);
+			e.style.position = "absolute", e.style.webkitBackfaceVisibility = e.style.backfaceVisibility = "hidden", e.style.transformStyle = "preserve-3d", e.style.transform = "translate3D(" + r + "px," + n + "px, 0)", c[i] += e.getBoundingClientRect().height + t, a += 1
+		}), i.style.display = "";
+		var f = c.slice(0).sort(function(t, e) {
+			return t - e
+		}).pop();
+		i.style.height = f + "px", "function" == typeof e && e(r)
+	}, i
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#6c599f">
+<meta name="generator" content="Hexo 5.4.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/lei2rock/CDN/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/lei2rock/CDN/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/lei2rock/CDN/images/favicon-16x16.png">
+  <link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/lei2rock/CDN/images/safari-pinned-tab.svg" color="#6c599f">
+  <meta name="google-site-verification" content="SJUudYL5q_atXSgew2qwy69FXOnSnNB2rAmwHmcBT9U">
+  <meta name="baidu-site-verification" content="wvc37nzEad">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fanhuadesenlinnn/CDN@1.0/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond:300,300italic,400,400italic,700,700italic%7CNoto+Serif+SC:300,300italic,400,400italic,700,700italic%7CLong+Cang:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.dlzhang.com","root":"/","images":"https://cdn.jsdelivr.net/gh/fanhuadesenlinnn/CDN@1.0/images","scheme":"Gemini","version":"8.3.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="啦啦啦啦啦">
+<meta property="og:type" content="website">
+<meta property="og:title" content="弈">
+<meta property="og:url" content="https://blog.dlzhang.com/page/2/">
+<meta property="og:site_name" content="弈">
+<meta property="og:description" content="啦啦啦啦啦">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="曹恒源">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.dlzhang.com/page/2/">
+
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+
+<link rel="preconnect" href="https://website-1256060851.file.myqcloud.com" crossorigin>
+<link rel="preconnect" href="https://sdn.geekzu.org" crossorigin>
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiangsudian/CaoMei/style.min.css">
+
+
+
+
+
+<script type="text/javascript">
+// Live2d
+// 注意：live2d_path 参数应使用绝对路径
+const live2d_path = "https://cdn.jsdelivr.net/gh/lei2rock/live2d-widget/";
+
+// 封装异步加载资源的方法
+function loadExternalResource(url, type) {
+	return new Promise((resolve, reject) => {
+		let tag;
+
+		if (type === "css") {
+			tag = document.createElement("link");
+			tag.rel = "stylesheet";
+			tag.href = url;
+		}
+		else if (type === "js") {
+			tag = document.createElement("script");
+			tag.src = url;
+		}
+		if (tag) {
+			tag.onload = () => resolve(url);
+			tag.onerror = () => reject(url);
+			document.head.appendChild(tag);
+		}
+	});
+}
+
+// 加载 waifu.css live2d.min.js waifu-tips.js
+if (screen.width >= 768) {
+	Promise.all([
+		loadExternalResource(live2d_path + "waifu.min.css", "css"),
+		loadExternalResource(live2d_path + "live2d.min.js", "js"),
+		loadExternalResource(live2d_path + "waifu-tips.min.js", "js")
+	]).then(() => {
+		initWidget({
+			waifuPath: live2d_path + "waifu-tips.json",
+			apiPath: "https://api.dlzhang.com/live2d/", // https://live2d.fghrsh.net/api/
+			//cdnPath: "https://cdn.jsdelivr.net/gh/fghrsh/live2d_api/"
+		});
+	});
+}
+// initWidget 第一个参数为 waifu-tips.json 的路径，第二个参数为 API 地址
+// API 后端可自行搭建，参考 https://github.com/fghrsh/live2d_api
+// 初始化看板娘会自动加载指定目录下的 waifu-tips.json
+
+console.log(`
+  く__,.ヘヽ.        /  ,ー､ 〉
+           ＼ ', !-─‐-i  /  /´
+           ／｀ｰ'       L/／｀ヽ､
+         /   ／,   /|   ,   ,       ',
+       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i
+        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   |
+          !,/7 '0'     ´0iソ|    |
+          |.从"    _     ,,,, / |./    |
+          ﾚ'| i＞.､,,__  _,.イ /   .i   |
+            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  |
+              | |/i 〈|/   i  ,.ﾍ |  i  |
+             .|/ /  ｉ：    ﾍ!    ＼  |
+              kヽ>､ﾊ    _,.ﾍ､    /､!
+              !'〈//｀Ｔ´', ＼ ｀'7'ｰr'
+              ﾚ'ヽL__|___i,___,ンﾚ|ノ
+                  ﾄ-,/  |___./
+                  'ｰ'    !_,.:
+`);
+// End Live2d Code
+
+window.addEventListener('load', () => {
+	console.log(`\n%c醉里挑灯赏猫%c班班 @lei2rock%c\n`, 'padding: 8px; background: #3f5973; font-weight: bold; font-size: large; color: white;', 'padding: 8px; background: #649ab6; font-size: large; color: #eee;','');
+	console.log(`页面加载完毕消耗了${Math.round(performance.now() * 100) / 100}ms`);
+});
+
+</script>
+<title>弈</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141207776-1"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-141207776-1');
+      }
+    </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="弈" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">弈</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fas fa-home fa-fw"></i>本站首页</a></li>
+        
+            
+  <li class="menu-item menu-item-overview"><a href="/overview/" rel="section"><i class="fas fa-archive fa-fw"></i>文章总览</a></li>
+
+
+      
+        <li class="menu-item menu-item-more"><a href="/more/" rel="section"><i class="fas fa-location-arrow fa-fw"></i>关于更多</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="曹恒源"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">曹恒源</p>
+  <div class="site-description" itemprop="description">啦啦啦啦啦</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/overview/timeline">
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/overview/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/overview/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lei2rock" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lei2rock" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="曹恒源">
+      <meta itemprop="description" content="啦啦啦啦啦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="弈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/4/" class="post-title-link" itemprop="url">在 CentOS 上挂载 exFAT 驱动器</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发布：</span>
+
+      <time title="创建时间：2011-02-27 09:34:36" itemprop="dateCreated datePublished" datetime="2011-02-27T09:34:36+08:00">2011-02-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类：</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/overview/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>想要在 CentOS 上挂载 exFAT 文件系统，你需要安装免费 FUSE exFAT 模块和工具，它们给 Unix-like 的系统提供了一个完整特性的 exFAT 文件系统实现。</p>
+<p>exFAT 软件包在 CentOS 7 核心软件源仓库上不可用。你可以选择从源码编译 exFAT 工具，或者从<a target="_blank" rel="noopener" href="https://li.nux.ro/repos.html">Nux Dextop</a>源仓库上使用 yum 下载安装它。我们选择第二个选。</p>
+<p>Nux 源依赖 EPEL 软件源。如果 EPEL 软件源在你的系统上不可用，启动它，输入：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install epel-release</span><br></pre></td></tr></table></figure>
+
+<p>下一步，导入 GPG key 并且通过安装 rpm 包启用 Nux 软件源：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm -v --import http:<span class="regexp">//</span>li.nux.ro<span class="regexp">/download/</span>nux/RPM-GPG-KEY-nux.ro</span><br><span class="line">sudo rpm -Uvh http:<span class="regexp">//</span>li.nux.ro<span class="regexp">/download/</span>nux<span class="regexp">/dextop/</span>el7<span class="regexp">/x86_64/</span>nux-dextop-release-<span class="number">0</span>-<span class="number">5</span>.el7.nux.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<p>一旦源仓库安装完成，使用下面的命令安装<code>exfat-fuse</code>和<code>exfat-utils</code>软件包：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum <span class="keyword">install</span> exfat-utils fuse-exfat</span><br></pre></td></tr></table></figure>
+
+<p>就这样了。你现在可以挂载 exFAT 格式的设备。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="曹恒源">
+      <meta itemprop="description" content="啦啦啦啦啦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="弈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/5/" class="post-title-link" itemprop="url">MySQL使用</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发布：</span>
+
+      <time title="创建时间：2011-02-27 09:34:36" itemprop="dateCreated datePublished" datetime="2011-02-27T09:34:36+08:00">2011-02-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类：</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/overview/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <span id="more"></span>
+
+<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="曹恒源">
+      <meta itemprop="description" content="啦啦啦啦啦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="弈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/6/" class="post-title-link" itemprop="url">LVM(逻辑卷管理器)使用</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发布：</span>
+
+      <time title="创建时间：2011-02-27 09:34:36" itemprop="dateCreated datePublished" datetime="2011-02-27T09:34:36+08:00">2011-02-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类：</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/overview/LVM/" itemprop="url" rel="index"><span itemprop="name">LVM</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <span id="more"></span>
+
+
+<ul>
+<li>PV 物理卷，PE  最小物理单位</li>
+<li>VG 卷组</li>
+<li>LV 逻辑劵</li>
+<li></li>
+</ul>
+<p>扫描   pvscan        vgscan           lvscan<br>建立   pvcreate     vgcreate        lvcreate<br>显示   pvdisplay    vgdisplay      lvdisplay<br>删除   pvremove   vgremove     lvremove<br>扩展                      vgextend      lvextend<br>缩小                      vgreduce      lvreduce</p>
+<ul>
+<li>创建物理卷</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pvcreate /dev/sdb  /dev/sdc</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建卷组</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vgcreate  juanzu_name  /dev/sdb /dev/sdc </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建逻辑卷</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lvcreate -n   lv_name    -L  150M     juanzu_name</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>格式化</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4  /dev/juanzu_name/lv_name</span><br></pre></td></tr></table></figure>
+
+<h3 id="扩展逻辑卷"><a href="#扩展逻辑卷" class="headerlink" title="扩展逻辑卷"></a>扩展逻辑卷</h3><p>扩展前记得卸载设备与挂载点的关联</p>
+<ul>
+<li>umount</li>
+<li>lvextend -L 290M /dev/juanzu_name/lv_name</li>
+<li>e2fsck -f /dev/juanzu_name/lv_name</li>
+</ul>
+<h3 id="缩小逻辑卷"><a href="#缩小逻辑卷" class="headerlink" title="缩小逻辑卷"></a>缩小逻辑卷</h3><p>resize2fs</p>
+<h3 id="逻辑卷快照"><a href="#逻辑卷快照" class="headerlink" title="逻辑卷快照"></a>逻辑卷快照</h3>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="曹恒源">
+      <meta itemprop="description" content="啦啦啦啦啦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="弈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/7/" class="post-title-link" itemprop="url">Linux ftp使用，vsftpd</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发布：</span>
+
+      <time title="创建时间：2011-02-27 09:34:36" itemprop="dateCreated datePublished" datetime="2011-02-27T09:34:36+08:00">2011-02-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类：</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/overview/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <span id="more"></span>
+
+<h1 id="vsftpd"><a href="#vsftpd" class="headerlink" title="vsftpd"></a>vsftpd</h1><p><img data-src="vsftpd%2086f7f296b3d147ddb23b22a0c3788cee/Untitled.png" alt="vsftpd%2086f7f296b3d147ddb23b22a0c3788cee/Untitled.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#----匿名用户设置----</span></span><br><span class="line">anonymous_enable=NO <span class="comment">#禁止匿名用户登录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----本地用户设置----</span></span><br><span class="line">local_enable=YES <span class="comment">#允许本地用户登录ftp服务器</span></span><br><span class="line">write_enable=YES <span class="comment">#允许用户想服务器执行写入操作</span></span><br><span class="line">local_umask=022 <span class="comment">#设置服务器上本地用户创建文件的权限掩码</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----欢迎语设置----</span></span><br><span class="line">dirmessage_enable=YES <span class="comment">#启用目录提示消息</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----日志文件设置----</span></span><br><span class="line">xferlog_enable=YES <span class="comment">#启用日志文件功能，记录于/var/log/xferlog</span></span><br><span class="line">xferlog_std_format=YES <span class="comment">#启用标准的日志格式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----FTP工作方式与端口设置----</span></span><br><span class="line">connect_from_port_20=YES <span class="comment">#主动模式下，是否启用默认的20端口进行数据传输</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----与连接相关的设置----</span></span><br><span class="line">listen=NO            <span class="comment">#vsftpd不是以独立的服务运行，要受到xinetd服务的管控，功能上会受到限制</span></span><br><span class="line">listen_ipv6=YES</span><br><span class="line"></span><br><span class="line"><span class="comment">#----控制用户是否允许切换到上级目录----</span></span><br><span class="line">chroot_list_enable=YES         <span class="comment">#开启限制用户在主目录的功能</span></span><br><span class="line">chroot_list_file=/etc/vsftpd/chroot_list <span class="comment">#在chroot_list文件中加入你要限制的用户名，一行一个用户</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----虚拟用户设置----</span></span><br><span class="line">pam_service_name=vsftpd      <span class="comment">#虚拟用户使用PAM认证方式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----控制用户访问（通过vsftpd.user_list和ftpusers文件来实现）----</span></span><br><span class="line">userlist_enable=YES <span class="comment">#是否启用userlist_file文件</span></span><br><span class="line">userlist_file=/etc/vsftpd/user_list <span class="comment">#允许user_list文件中加入的用户访问ftp服务器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----控制主机访问----</span></span><br><span class="line">tcp_wrappers=YES <span class="comment">#vsftpd服务器检查/etc/hosts.allow和/etc/hosts.deny中的设置，来决定请求连接的主机，是否允许访问该FTP服务器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----其它设置----</span></span><br><span class="line">allow_writeable_chroot=YES <span class="comment">#去除用户主目录的写权限</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改默认端口</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">打开/etc/services文件</span><br><span class="line"></span><br><span class="line"><span class="comment"># vim /etc/services</span></span><br><span class="line">4、找到ftp选项并将21修改成你设置的端口，本文为2121</span><br><span class="line"></span><br><span class="line"><span class="comment"># 21 is registered to ftp, but also used by fsp</span></span><br><span class="line">ftp             2121/tcp</span><br><span class="line">ftp             2121/udp          fsp fspd</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="曹恒源">
+      <meta itemprop="description" content="啦啦啦啦啦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="弈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/9/" class="post-title-link" itemprop="url">使用rsync同步文件</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发布：</span>
+
+      <time title="创建时间：2011-02-27 09:34:36" itemprop="dateCreated datePublished" datetime="2011-02-27T09:34:36+08:00">2011-02-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类：</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/overview/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <span id="more"></span>
+
+<h1 id="Linux-工具之rsync"><a href="#Linux-工具之rsync" class="headerlink" title="Linux 工具之rsync"></a>Linux 工具之rsync</h1><p><strong>rsync命令</strong>是一个远程数据同步工具，可通过LAN/WAN快速同步多台主机间的文件。rsync使用所谓的“rsync算法”来使本地和远程两个主机之间的文件达到同步，这个算法只传送两个文件的不同部分，而不是每次都整份传送，因此速度相当快。</p>
+<ul>
+<li><p>语法</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync [OPTION]... SRC DESTrsync [OPTION]... SRC [USER@]host:DESTrsync [OPTION]... [USER@]HOST:SRC DESTrsync [OPTION]... [USER@]HOST::SRC DESTrsync [OPTION]... SRC [USER@]HOST::DESTrsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]<span class="comment"># 常用选项[OPTION]-v :展示详细的同步信息-a :归档模式，相当于 -rlptgoD    -r :递归目录    -l :同步软连接文件    -p :保留权限    -t :将源文件的&quot;modify time&quot;同步到目标机器    -g :保持文件属组    -o :保持文件属主    -D :和--devices --specials一样，保持设备文件和特殊文件-z :发送数据前，先压缩再传输-H :保持硬链接-n :进行试运行，不作任何更改-P same as --partial --progress    --partial :支持断点续传    --progress :展示传输的进度--delete :如果源文件消失，目标文件也会被删除--delete-excluded :指定要在目的端删除的文件--delete-after :默认情况下，rsync是先清理目的端的文件再开始数据同步；如果使用此选项，则rsync会先进行数据同步，都完成后再删除那些需要清理的文件。--exclude=PATTERN :排除匹配PATTERN的文件--exclude-from=FILE :如果要排除的文件很多，可以统一写在某一文件中-e ssh :使用SSH加密隧道传输</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="使用案例"><a href="#使用案例" class="headerlink" title="使用案例"></a>使用案例</h3><ul>
+<li><p>指定<code>ssh</code>连接时的参数,比如连接远程端口为<code>4399</code>、ip为<code>11.22.33.44</code>的格式为</p>
+<p>  <code>rsync -az -e &#39;ssh -p 4399&#39; /home/yuan root@11.22.33.44:/home/yuan</code></p>
+</li>
+<li><p>指定ssh连接时的密码</p>
+<p>  <code>sshpass -p 123456 rsync -az /home/yuan root@11.22.33.44:/home/yuan</code></p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">avzP</span><br><span class="line"></span><br><span class="line">远程传输到本地</span><br><span class="line">rsync -avzP --bwlimit=<span class="number">1000</span> 远程文件 本地文件</span><br><span class="line">rsync -avzP --bwlimit=<span class="number">1000</span>  <span class="number">123.121</span><span class="number">.123</span><span class="number">.123</span>:<span class="regexp">/tmp/</span>test /apk/tmp/</span><br><span class="line"></span><br><span class="line">本地传输到远程</span><br><span class="line">rsync -avzP --bwlimit=<span class="number">1000</span> 本地文件 远程文件</span><br><span class="line">rsync -avzP --bwlimit=<span class="number">1000</span>   /apk/tmp/test <span class="number">123.121</span><span class="number">.123</span><span class="number">.123</span>:<span class="regexp">/tmp/</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="曹恒源">
+      <meta itemprop="description" content="啦啦啦啦啦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="弈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/8/" class="post-title-link" itemprop="url">docker 使用</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发布：</span>
+
+      <time title="创建时间：2011-02-27 09:34:36" itemprop="dateCreated datePublished" datetime="2011-02-27T09:34:36+08:00">2011-02-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类：</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/overview/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <span id="more"></span>
+
+<h3 id="制作镜像"><a href="#制作镜像" class="headerlink" title="制作镜像"></a>制作镜像</h3><p>两种方式</p>
+<ol>
+<li>docker commit命令</li>
+<li>使用docker build和Dockerfile文件</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">示例制作一个tomcat镜像，制作步骤：</span><br><span class="line"></span><br><span class="line">docker commit 提交一个正在运行的容器为一个新的镜像</span><br><span class="line"></span><br><span class="line">1.拉取一个基础镜像</span><br><span class="line">docker pull centos</span><br><span class="line"></span><br><span class="line">2.创建一个交互式容器</span><br><span class="line">docker run -it --name=mycentos centos：latest</span><br><span class="line"></span><br><span class="line">3.上传软件到容器中</span><br><span class="line">docker cp  xxx.tar  mycentos:/root/</span><br><span class="line"></span><br><span class="line">4.在容器中安装软件</span><br><span class="line"></span><br><span class="line">1. 将交互式的容器提交为一个新的镜像</span><br><span class="line">docker commit mycentos myomcat</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="镜像打包"><a href="#镜像打包" class="headerlink" title="镜像打包"></a>镜像打包</h3><p>1.镜像打包</p>
+<p><code>docker save -o /root/xxx.tar  &lt;name&gt;</code><br>2.导入镜像</p>
+<p><code>docker load -i /root/xxx.tar</code></p>
+<h3 id="容器打包"><a href="#容器打包" class="headerlink" title="容器打包"></a>容器打包</h3><p>1.容器打包</p>
+<p><code>docker export -o /root/xx.tar  &lt;name&gt;</code><br>2.导入容器</p>
+<p><code>docker import xx.tar &lt;name&gt;:latest</code></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fas fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">曹恒源</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fanhuadesenlinnn/CDN@1.0/js/utils.js"></script><script src="https://cdn.jsdelivr.net/gh/fanhuadesenlinnn/CDN@1.0/js/next-boot.js"></script><script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/fanhuadesenlinnn/CDN@1.0/js/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+    <div class="pjax">
+
+  
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+/* @license Minigrid v3.1.1 – https://cdn.jsdelivr.net/npm/minigrid@3.1.1/dist/minigrid.min.js */
+!function(t, e) {
+	"function" == typeof define && define.amd ? define(e) : "object" == typeof exports ? module.exports = e() : t.Minigrid = e()
+}(this, function(t) {
+	"use strict";
+	function e(t, e) {
+		for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
+		return t
+	}
+	var i = function(t) {
+			var i = t.container instanceof Node ? t.container : document.querySelector(t.container),
+				r = t.item instanceof NodeList ? t.item : i.querySelectorAll(t.item);
+			this.props = e(t, {
+				container: i,
+				nodeList: r
+			})
+		};
+	return i.prototype.mount = function() {
+		if (!this.props.container) return !1;
+		if (!this.props.nodeList || 0 === this.props.nodeList.length) return !1;
+		var t = "number" == typeof this.props.gutter && isFinite(this.props.gutter) && Math.floor(this.props.gutter) === this.props.gutter ? this.props.gutter : 0,
+			e = this.props.done,
+			i = this.props.container,
+			r = this.props.nodeList;
+		i.style.width = "";
+		var n = Array.prototype.forEach,
+			o = i.getBoundingClientRect().width,
+			s = r[0].getBoundingClientRect().width + t,
+			p = Math.max(Math.floor((o - t) / s), 1),
+			a = 0;
+		o = s * p + t + "px", i.style.width = o, i.style.position = "relative";
+		for (var c = [], u = [], l = 0; l < p; ++l) u.push(l * s + t), c.push(t);
+		this.props.rtl && u.reverse(), n.call(r, function(e) {
+			var i = c.slice(0).sort(function(t, e) {
+				return t - e
+			}).shift();
+			i = c.indexOf(i);
+			var r = parseInt(u[i]),
+				n = parseInt(c[i]);
+			e.style.position = "absolute", e.style.webkitBackfaceVisibility = e.style.backfaceVisibility = "hidden", e.style.transformStyle = "preserve-3d", e.style.transform = "translate3D(" + r + "px," + n + "px, 0)", c[i] += e.getBoundingClientRect().height + t, a += 1
+		}), i.style.display = "";
+		var f = c.slice(0).sort(function(t, e) {
+			return t - e
+		}).pop();
+		i.style.height = f + "px", "function" == typeof e && e(r)
+	}, i
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>
