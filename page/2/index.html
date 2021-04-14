@@ -358,6 +358,90 @@ window.addEventListener('load', () => {
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="曹恒源">
+      <meta itemprop="description" content="啦啦啦啦啦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="弈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/4/" class="post-title-link" itemprop="url">在 CentOS 上挂载 exFAT 驱动器</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发布：</span>
+
+      <time title="创建时间：2011-02-27 09:34:36" itemprop="dateCreated datePublished" datetime="2011-02-27T09:34:36+08:00">2011-02-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类：</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/overview/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>想要在 CentOS 上挂载 exFAT 文件系统，你需要安装免费 FUSE exFAT 模块和工具，它们给 Unix-like 的系统提供了一个完整特性的 exFAT 文件系统实现。</p>
+<p>exFAT 软件包在 CentOS 7 核心软件源仓库上不可用。你可以选择从源码编译 exFAT 工具，或者从<a target="_blank" rel="noopener" href="https://li.nux.ro/repos.html">Nux Dextop</a>源仓库上使用 yum 下载安装它。我们选择第二个选。</p>
+<p>Nux 源依赖 EPEL 软件源。如果 EPEL 软件源在你的系统上不可用，启动它，输入：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install epel-release</span><br></pre></td></tr></table></figure>
+
+<p>下一步，导入 GPG key 并且通过安装 rpm 包启用 Nux 软件源：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm -v --import http:<span class="regexp">//</span>li.nux.ro<span class="regexp">/download/</span>nux/RPM-GPG-KEY-nux.ro</span><br><span class="line">sudo rpm -Uvh http:<span class="regexp">//</span>li.nux.ro<span class="regexp">/download/</span>nux<span class="regexp">/dextop/</span>el7<span class="regexp">/x86_64/</span>nux-dextop-release-<span class="number">0</span>-<span class="number">5</span>.el7.nux.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<p>一旦源仓库安装完成，使用下面的命令安装<code>exfat-fuse</code>和<code>exfat-utils</code>软件包：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum <span class="keyword">install</span> exfat-utils fuse-exfat</span><br></pre></td></tr></table></figure>
+
+<p>就这样了。你现在可以挂载 exFAT 格式的设备。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -407,6 +491,86 @@ window.addEventListener('load', () => {
           <span id="more"></span>
 
 <h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="曹恒源">
+      <meta itemprop="description" content="啦啦啦啦啦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="弈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/7/" class="post-title-link" itemprop="url">Linux ftp使用，vsftpd</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发布：</span>
+
+      <time title="创建时间：2011-02-27 09:34:36" itemprop="dateCreated datePublished" datetime="2011-02-27T09:34:36+08:00">2011-02-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类：</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/overview/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <span id="more"></span>
+
+<h1 id="vsftpd"><a href="#vsftpd" class="headerlink" title="vsftpd"></a>vsftpd</h1><p><img data-src="vsftpd%2086f7f296b3d147ddb23b22a0c3788cee/Untitled.png" alt="vsftpd%2086f7f296b3d147ddb23b22a0c3788cee/Untitled.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#----匿名用户设置----</span></span><br><span class="line">anonymous_enable=NO <span class="comment">#禁止匿名用户登录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----本地用户设置----</span></span><br><span class="line">local_enable=YES <span class="comment">#允许本地用户登录ftp服务器</span></span><br><span class="line">write_enable=YES <span class="comment">#允许用户想服务器执行写入操作</span></span><br><span class="line">local_umask=022 <span class="comment">#设置服务器上本地用户创建文件的权限掩码</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----欢迎语设置----</span></span><br><span class="line">dirmessage_enable=YES <span class="comment">#启用目录提示消息</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----日志文件设置----</span></span><br><span class="line">xferlog_enable=YES <span class="comment">#启用日志文件功能，记录于/var/log/xferlog</span></span><br><span class="line">xferlog_std_format=YES <span class="comment">#启用标准的日志格式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----FTP工作方式与端口设置----</span></span><br><span class="line">connect_from_port_20=YES <span class="comment">#主动模式下，是否启用默认的20端口进行数据传输</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----与连接相关的设置----</span></span><br><span class="line">listen=NO            <span class="comment">#vsftpd不是以独立的服务运行，要受到xinetd服务的管控，功能上会受到限制</span></span><br><span class="line">listen_ipv6=YES</span><br><span class="line"></span><br><span class="line"><span class="comment">#----控制用户是否允许切换到上级目录----</span></span><br><span class="line">chroot_list_enable=YES         <span class="comment">#开启限制用户在主目录的功能</span></span><br><span class="line">chroot_list_file=/etc/vsftpd/chroot_list <span class="comment">#在chroot_list文件中加入你要限制的用户名，一行一个用户</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----虚拟用户设置----</span></span><br><span class="line">pam_service_name=vsftpd      <span class="comment">#虚拟用户使用PAM认证方式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----控制用户访问（通过vsftpd.user_list和ftpusers文件来实现）----</span></span><br><span class="line">userlist_enable=YES <span class="comment">#是否启用userlist_file文件</span></span><br><span class="line">userlist_file=/etc/vsftpd/user_list <span class="comment">#允许user_list文件中加入的用户访问ftp服务器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----控制主机访问----</span></span><br><span class="line">tcp_wrappers=YES <span class="comment">#vsftpd服务器检查/etc/hosts.allow和/etc/hosts.deny中的设置，来决定请求连接的主机，是否允许访问该FTP服务器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----其它设置----</span></span><br><span class="line">allow_writeable_chroot=YES <span class="comment">#去除用户主目录的写权限</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改默认端口</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">打开/etc/services文件</span><br><span class="line"></span><br><span class="line"><span class="comment"># vim /etc/services</span></span><br><span class="line">4、找到ftp选项并将21修改成你设置的端口，本文为2121</span><br><span class="line"></span><br><span class="line"><span class="comment"># 21 is registered to ftp, but also used by fsp</span></span><br><span class="line">ftp             2121/tcp</span><br><span class="line">ftp             2121/udp          fsp fspd</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -628,90 +792,6 @@ window.addEventListener('load', () => {
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="曹恒源">
-      <meta itemprop="description" content="啦啦啦啦啦">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="弈">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/4/" class="post-title-link" itemprop="url">在 CentOS 上挂载 exFAT 驱动器</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发布：</span>
-
-      <time title="创建时间：2011-02-27 09:34:36" itemprop="dateCreated datePublished" datetime="2011-02-27T09:34:36+08:00">2011-02-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类：</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/overview/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>想要在 CentOS 上挂载 exFAT 文件系统，你需要安装免费 FUSE exFAT 模块和工具，它们给 Unix-like 的系统提供了一个完整特性的 exFAT 文件系统实现。</p>
-<p>exFAT 软件包在 CentOS 7 核心软件源仓库上不可用。你可以选择从源码编译 exFAT 工具，或者从<a target="_blank" rel="noopener" href="https://li.nux.ro/repos.html">Nux Dextop</a>源仓库上使用 yum 下载安装它。我们选择第二个选。</p>
-<p>Nux 源依赖 EPEL 软件源。如果 EPEL 软件源在你的系统上不可用，启动它，输入：</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install epel-release</span><br></pre></td></tr></table></figure>
-
-<p>下一步，导入 GPG key 并且通过安装 rpm 包启用 Nux 软件源：</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm -v --import http:<span class="regexp">//</span>li.nux.ro<span class="regexp">/download/</span>nux/RPM-GPG-KEY-nux.ro</span><br><span class="line">sudo rpm -Uvh http:<span class="regexp">//</span>li.nux.ro<span class="regexp">/download/</span>nux<span class="regexp">/dextop/</span>el7<span class="regexp">/x86_64/</span>nux-dextop-release-<span class="number">0</span>-<span class="number">5</span>.el7.nux.noarch.rpm</span><br></pre></td></tr></table></figure>
-
-<p>一旦源仓库安装完成，使用下面的命令安装<code>exfat-fuse</code>和<code>exfat-utils</code>软件包：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum <span class="keyword">install</span> exfat-utils fuse-exfat</span><br></pre></td></tr></table></figure>
-
-<p>就这样了。你现在可以挂载 exFAT 格式的设备。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -774,86 +854,6 @@ window.addEventListener('load', () => {
 <p><code>docker export -o /root/xx.tar  &lt;name&gt;</code><br>2.导入容器</p>
 <p><code>docker import xx.tar &lt;name&gt;:latest</code></p>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="曹恒源">
-      <meta itemprop="description" content="啦啦啦啦啦">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="弈">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/7/" class="post-title-link" itemprop="url">Linux ftp使用，vsftpd</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发布：</span>
-
-      <time title="创建时间：2011-02-27 09:34:36" itemprop="dateCreated datePublished" datetime="2011-02-27T09:34:36+08:00">2011-02-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类：</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/overview/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <span id="more"></span>
-
-<h1 id="vsftpd"><a href="#vsftpd" class="headerlink" title="vsftpd"></a>vsftpd</h1><p><img data-src="vsftpd%2086f7f296b3d147ddb23b22a0c3788cee/Untitled.png" alt="vsftpd%2086f7f296b3d147ddb23b22a0c3788cee/Untitled.png"></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#----匿名用户设置----</span></span><br><span class="line">anonymous_enable=NO <span class="comment">#禁止匿名用户登录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----本地用户设置----</span></span><br><span class="line">local_enable=YES <span class="comment">#允许本地用户登录ftp服务器</span></span><br><span class="line">write_enable=YES <span class="comment">#允许用户想服务器执行写入操作</span></span><br><span class="line">local_umask=022 <span class="comment">#设置服务器上本地用户创建文件的权限掩码</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----欢迎语设置----</span></span><br><span class="line">dirmessage_enable=YES <span class="comment">#启用目录提示消息</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----日志文件设置----</span></span><br><span class="line">xferlog_enable=YES <span class="comment">#启用日志文件功能，记录于/var/log/xferlog</span></span><br><span class="line">xferlog_std_format=YES <span class="comment">#启用标准的日志格式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----FTP工作方式与端口设置----</span></span><br><span class="line">connect_from_port_20=YES <span class="comment">#主动模式下，是否启用默认的20端口进行数据传输</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----与连接相关的设置----</span></span><br><span class="line">listen=NO            <span class="comment">#vsftpd不是以独立的服务运行，要受到xinetd服务的管控，功能上会受到限制</span></span><br><span class="line">listen_ipv6=YES</span><br><span class="line"></span><br><span class="line"><span class="comment">#----控制用户是否允许切换到上级目录----</span></span><br><span class="line">chroot_list_enable=YES         <span class="comment">#开启限制用户在主目录的功能</span></span><br><span class="line">chroot_list_file=/etc/vsftpd/chroot_list <span class="comment">#在chroot_list文件中加入你要限制的用户名，一行一个用户</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----虚拟用户设置----</span></span><br><span class="line">pam_service_name=vsftpd      <span class="comment">#虚拟用户使用PAM认证方式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----控制用户访问（通过vsftpd.user_list和ftpusers文件来实现）----</span></span><br><span class="line">userlist_enable=YES <span class="comment">#是否启用userlist_file文件</span></span><br><span class="line">userlist_file=/etc/vsftpd/user_list <span class="comment">#允许user_list文件中加入的用户访问ftp服务器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----控制主机访问----</span></span><br><span class="line">tcp_wrappers=YES <span class="comment">#vsftpd服务器检查/etc/hosts.allow和/etc/hosts.deny中的设置，来决定请求连接的主机，是否允许访问该FTP服务器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----其它设置----</span></span><br><span class="line">allow_writeable_chroot=YES <span class="comment">#去除用户主目录的写权限</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改默认端口</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">打开/etc/services文件</span><br><span class="line"></span><br><span class="line"><span class="comment"># vim /etc/services</span></span><br><span class="line">4、找到ftp选项并将21修改成你设置的端口，本文为2121</span><br><span class="line"></span><br><span class="line"><span class="comment"># 21 is registered to ftp, but also used by fsp</span></span><br><span class="line">ftp             2121/tcp</span><br><span class="line">ftp             2121/udp          fsp fspd</span><br></pre></td></tr></table></figure>
       
     </div>
 
