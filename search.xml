@@ -49,42 +49,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux 工具之crontab</title>
-    <url>//posts/12/</url>
-    <content><![CDATA[<p>crontab</p>
-<span id="more"></span>
-
-<ul>
-<li><p>格式</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">* * * * *  /root/jiaoben.sh</span><br><span class="line">| | | | |  |</span><br><span class="line">| | | | |   ---- 要执行的命令、脚本</span><br><span class="line">| | | |  ------- 0~7  星期，0和7都是星期天</span><br><span class="line">| | |  --------- 1~12 月</span><br><span class="line">| |  ----------- 1~31 日</span><br><span class="line">|  ------------- 0~23 小时</span><br><span class="line"> --------------- 0~59 分钟</span><br></pre></td></tr></table></figure></li>
-<li><p>示例</p>
-<ul>
-<li><p>每分钟执行一次</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">* * * * * <span class="built_in">command</span></span><br></pre></td></tr></table></figure></li>
-<li><p>每小时的第3和第15分钟执行</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">3,15 * * * * <span class="built_in">command</span></span><br></pre></td></tr></table></figure></li>
-<li><p>在上午8点到11点的第3和第15分钟执行</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">3,15 8-11 * * 1 <span class="built_in">command</span></span><br></pre></td></tr></table></figure></li>
-<li><p>每隔2天上午8点到11点的第3和第15分钟执行</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">3,15 8-11 */2 * * <span class="built_in">command</span></span><br></pre></td></tr></table></figure></li>
-<li><p>每周一上午8点到11点的第3和第15分钟执行</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">3,15 8-11 * * 1 <span class="built_in">command</span></span><br></pre></td></tr></table></figure></li>
-<li><p>每晚的21:30执行</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">30 21 * * * <span class="built_in">command</span></span><br></pre></td></tr></table></figure></li>
-<li><p>每月1、10、22日的4:45</p>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux 系统优化</title>
     <url>//posts/14/</url>
     <content><![CDATA[<span id="more"></span>
@@ -245,6 +209,42 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux 工具之crontab</title>
+    <url>//posts/12/</url>
+    <content><![CDATA[<p>crontab</p>
+<span id="more"></span>
+
+<ul>
+<li><p>格式</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">* * * * *  /root/jiaoben.sh</span><br><span class="line">| | | | |  |</span><br><span class="line">| | | | |   ---- 要执行的命令、脚本</span><br><span class="line">| | | |  ------- 0~7  星期，0和7都是星期天</span><br><span class="line">| | |  --------- 1~12 月</span><br><span class="line">| |  ----------- 1~31 日</span><br><span class="line">|  ------------- 0~23 小时</span><br><span class="line"> --------------- 0~59 分钟</span><br></pre></td></tr></table></figure></li>
+<li><p>示例</p>
+<ul>
+<li><p>每分钟执行一次</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">* * * * * <span class="built_in">command</span></span><br></pre></td></tr></table></figure></li>
+<li><p>每小时的第3和第15分钟执行</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">3,15 * * * * <span class="built_in">command</span></span><br></pre></td></tr></table></figure></li>
+<li><p>在上午8点到11点的第3和第15分钟执行</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">3,15 8-11 * * 1 <span class="built_in">command</span></span><br></pre></td></tr></table></figure></li>
+<li><p>每隔2天上午8点到11点的第3和第15分钟执行</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">3,15 8-11 */2 * * <span class="built_in">command</span></span><br></pre></td></tr></table></figure></li>
+<li><p>每周一上午8点到11点的第3和第15分钟执行</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">3,15 8-11 * * 1 <span class="built_in">command</span></span><br></pre></td></tr></table></figure></li>
+<li><p>每晚的21:30执行</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">30 21 * * * <span class="built_in">command</span></span><br></pre></td></tr></table></figure></li>
+<li><p>每月1、10、22日的4:45</p>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Centos 7 中的Yum</title>
     <url>//posts/15/</url>
     <content><![CDATA[<span id="more"></span>
@@ -258,6 +258,22 @@
       </categories>
       <tags>
         <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>主机设置安全启动</title>
+    <url>//posts/3/</url>
+    <content><![CDATA[<p>主机设置安装启动</p>
+<span id="more"></span>
+
+
+<p><img data-src="/images/3-%E8%AE%BE%E7%BD%AE%E5%AE%89%E5%85%A8%E5%90%AF%E5%8A%A8.png"></p>
+]]></content>
+      <categories>
+        <category>操作系统安装</category>
+      </categories>
+      <tags>
+        <tag>安装启动</tag>
       </tags>
   </entry>
   <entry>
@@ -281,45 +297,6 @@
       </categories>
       <tags>
         <tag>标签</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>主机设置安全启动</title>
-    <url>//posts/3/</url>
-    <content><![CDATA[<p>主机设置安装启动</p>
-<span id="more"></span>
-
-
-<p><img data-src="/images/3-%E8%AE%BE%E7%BD%AE%E5%AE%89%E5%85%A8%E5%90%AF%E5%8A%A8.png"></p>
-]]></content>
-      <categories>
-        <category>操作系统安装</category>
-      </categories>
-      <tags>
-        <tag>安装启动</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在 CentOS 上挂载 exFAT 驱动器</title>
-    <url>//posts/4/</url>
-    <content><![CDATA[<p>想要在 CentOS 上挂载 exFAT 文件系统，你需要安装免费 FUSE exFAT 模块和工具，它们给 Unix-like 的系统提供了一个完整特性的 exFAT 文件系统实现。</p>
-<p>exFAT 软件包在 CentOS 7 核心软件源仓库上不可用。你可以选择从源码编译 exFAT 工具，或者从<a href="https://li.nux.ro/repos.html">Nux Dextop</a>源仓库上使用 yum 下载安装它。我们选择第二个选。</p>
-<p>Nux 源依赖 EPEL 软件源。如果 EPEL 软件源在你的系统上不可用，启动它，输入：</p>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">sudo yum install epel-release</span><br></pre></td></tr></table></figure>
-
-<p>下一步，导入 GPG key 并且通过安装 rpm 包启用 Nux 软件源：</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo rpm -v --import http:<span class="regexp">//</span>li.nux.ro<span class="regexp">/download/</span>nux/RPM-GPG-KEY-nux.ro</span><br><span class="line">sudo rpm -Uvh http:<span class="regexp">//</span>li.nux.ro<span class="regexp">/download/</span>nux<span class="regexp">/dextop/</span>el7<span class="regexp">/x86_64/</span>nux-dextop-release-<span class="number">0</span>-<span class="number">5</span>.el7.nux.noarch.rpm</span><br></pre></td></tr></table></figure>
-
-<p>一旦源仓库安装完成，使用下面的命令安装<code>exfat-fuse</code>和<code>exfat-utils</code>软件包：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="keyword">install</span> exfat-utils fuse-exfat</span><br></pre></td></tr></table></figure>
-
-<p>就这样了。你现在可以挂载 exFAT 格式的设备。</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -384,25 +361,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux ftp使用，vsftpd</title>
-    <url>//posts/7/</url>
-    <content><![CDATA[<span id="more"></span>
-
-<h1 id="vsftpd"><a href="#vsftpd" class="headerlink" title="vsftpd"></a>vsftpd</h1><p><img data-src="vsftpd%2086f7f296b3d147ddb23b22a0c3788cee/Untitled.png" alt="vsftpd%2086f7f296b3d147ddb23b22a0c3788cee/Untitled.png"></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#----匿名用户设置----</span></span><br><span class="line">anonymous_enable=NO <span class="comment">#禁止匿名用户登录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----本地用户设置----</span></span><br><span class="line">local_enable=YES <span class="comment">#允许本地用户登录ftp服务器</span></span><br><span class="line">write_enable=YES <span class="comment">#允许用户想服务器执行写入操作</span></span><br><span class="line">local_umask=022 <span class="comment">#设置服务器上本地用户创建文件的权限掩码</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----欢迎语设置----</span></span><br><span class="line">dirmessage_enable=YES <span class="comment">#启用目录提示消息</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----日志文件设置----</span></span><br><span class="line">xferlog_enable=YES <span class="comment">#启用日志文件功能，记录于/var/log/xferlog</span></span><br><span class="line">xferlog_std_format=YES <span class="comment">#启用标准的日志格式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----FTP工作方式与端口设置----</span></span><br><span class="line">connect_from_port_20=YES <span class="comment">#主动模式下，是否启用默认的20端口进行数据传输</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----与连接相关的设置----</span></span><br><span class="line">listen=NO            <span class="comment">#vsftpd不是以独立的服务运行，要受到xinetd服务的管控，功能上会受到限制</span></span><br><span class="line">listen_ipv6=YES</span><br><span class="line"></span><br><span class="line"><span class="comment">#----控制用户是否允许切换到上级目录----</span></span><br><span class="line">chroot_list_enable=YES         <span class="comment">#开启限制用户在主目录的功能</span></span><br><span class="line">chroot_list_file=/etc/vsftpd/chroot_list <span class="comment">#在chroot_list文件中加入你要限制的用户名，一行一个用户</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----虚拟用户设置----</span></span><br><span class="line">pam_service_name=vsftpd      <span class="comment">#虚拟用户使用PAM认证方式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----控制用户访问（通过vsftpd.user_list和ftpusers文件来实现）----</span></span><br><span class="line">userlist_enable=YES <span class="comment">#是否启用userlist_file文件</span></span><br><span class="line">userlist_file=/etc/vsftpd/user_list <span class="comment">#允许user_list文件中加入的用户访问ftp服务器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----控制主机访问----</span></span><br><span class="line">tcp_wrappers=YES <span class="comment">#vsftpd服务器检查/etc/hosts.allow和/etc/hosts.deny中的设置，来决定请求连接的主机，是否允许访问该FTP服务器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----其它设置----</span></span><br><span class="line">allow_writeable_chroot=YES <span class="comment">#去除用户主目录的写权限</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改默认端口</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">打开/etc/services文件</span><br><span class="line"></span><br><span class="line"><span class="comment"># vim /etc/services</span></span><br><span class="line">4、找到ftp选项并将21修改成你设置的端口，本文为2121</span><br><span class="line"></span><br><span class="line"><span class="comment"># 21 is registered to ftp, but also used by fsp</span></span><br><span class="line">ftp             2121/tcp</span><br><span class="line">ftp             2121/udp          fsp fspd</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用rsync同步文件</title>
     <url>//posts/9/</url>
     <content><![CDATA[<span id="more"></span>
@@ -429,6 +387,29 @@
       </tags>
   </entry>
   <entry>
+    <title>在 CentOS 上挂载 exFAT 驱动器</title>
+    <url>//posts/4/</url>
+    <content><![CDATA[<p>想要在 CentOS 上挂载 exFAT 文件系统，你需要安装免费 FUSE exFAT 模块和工具，它们给 Unix-like 的系统提供了一个完整特性的 exFAT 文件系统实现。</p>
+<p>exFAT 软件包在 CentOS 7 核心软件源仓库上不可用。你可以选择从源码编译 exFAT 工具，或者从<a href="https://li.nux.ro/repos.html">Nux Dextop</a>源仓库上使用 yum 下载安装它。我们选择第二个选。</p>
+<p>Nux 源依赖 EPEL 软件源。如果 EPEL 软件源在你的系统上不可用，启动它，输入：</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">sudo yum install epel-release</span><br></pre></td></tr></table></figure>
+
+<p>下一步，导入 GPG key 并且通过安装 rpm 包启用 Nux 软件源：</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo rpm -v --import http:<span class="regexp">//</span>li.nux.ro<span class="regexp">/download/</span>nux/RPM-GPG-KEY-nux.ro</span><br><span class="line">sudo rpm -Uvh http:<span class="regexp">//</span>li.nux.ro<span class="regexp">/download/</span>nux<span class="regexp">/dextop/</span>el7<span class="regexp">/x86_64/</span>nux-dextop-release-<span class="number">0</span>-<span class="number">5</span>.el7.nux.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<p>一旦源仓库安装完成，使用下面的命令安装<code>exfat-fuse</code>和<code>exfat-utils</code>软件包：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="keyword">install</span> exfat-utils fuse-exfat</span><br></pre></td></tr></table></figure>
+
+<p>就这样了。你现在可以挂载 exFAT 格式的设备。</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>docker 使用</title>
     <url>//posts/8/</url>
     <content><![CDATA[<span id="more"></span>
@@ -452,6 +433,25 @@
       </categories>
       <tags>
         <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux ftp使用，vsftpd</title>
+    <url>//posts/7/</url>
+    <content><![CDATA[<span id="more"></span>
+
+<h1 id="vsftpd"><a href="#vsftpd" class="headerlink" title="vsftpd"></a>vsftpd</h1><p><img data-src="vsftpd%2086f7f296b3d147ddb23b22a0c3788cee/Untitled.png" alt="vsftpd%2086f7f296b3d147ddb23b22a0c3788cee/Untitled.png"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#----匿名用户设置----</span></span><br><span class="line">anonymous_enable=NO <span class="comment">#禁止匿名用户登录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----本地用户设置----</span></span><br><span class="line">local_enable=YES <span class="comment">#允许本地用户登录ftp服务器</span></span><br><span class="line">write_enable=YES <span class="comment">#允许用户想服务器执行写入操作</span></span><br><span class="line">local_umask=022 <span class="comment">#设置服务器上本地用户创建文件的权限掩码</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----欢迎语设置----</span></span><br><span class="line">dirmessage_enable=YES <span class="comment">#启用目录提示消息</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----日志文件设置----</span></span><br><span class="line">xferlog_enable=YES <span class="comment">#启用日志文件功能，记录于/var/log/xferlog</span></span><br><span class="line">xferlog_std_format=YES <span class="comment">#启用标准的日志格式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----FTP工作方式与端口设置----</span></span><br><span class="line">connect_from_port_20=YES <span class="comment">#主动模式下，是否启用默认的20端口进行数据传输</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----与连接相关的设置----</span></span><br><span class="line">listen=NO            <span class="comment">#vsftpd不是以独立的服务运行，要受到xinetd服务的管控，功能上会受到限制</span></span><br><span class="line">listen_ipv6=YES</span><br><span class="line"></span><br><span class="line"><span class="comment">#----控制用户是否允许切换到上级目录----</span></span><br><span class="line">chroot_list_enable=YES         <span class="comment">#开启限制用户在主目录的功能</span></span><br><span class="line">chroot_list_file=/etc/vsftpd/chroot_list <span class="comment">#在chroot_list文件中加入你要限制的用户名，一行一个用户</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----虚拟用户设置----</span></span><br><span class="line">pam_service_name=vsftpd      <span class="comment">#虚拟用户使用PAM认证方式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----控制用户访问（通过vsftpd.user_list和ftpusers文件来实现）----</span></span><br><span class="line">userlist_enable=YES <span class="comment">#是否启用userlist_file文件</span></span><br><span class="line">userlist_file=/etc/vsftpd/user_list <span class="comment">#允许user_list文件中加入的用户访问ftp服务器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----控制主机访问----</span></span><br><span class="line">tcp_wrappers=YES <span class="comment">#vsftpd服务器检查/etc/hosts.allow和/etc/hosts.deny中的设置，来决定请求连接的主机，是否允许访问该FTP服务器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#----其它设置----</span></span><br><span class="line">allow_writeable_chroot=YES <span class="comment">#去除用户主目录的写权限</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改默认端口</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">打开/etc/services文件</span><br><span class="line"></span><br><span class="line"><span class="comment"># vim /etc/services</span></span><br><span class="line">4、找到ftp选项并将21修改成你设置的端口，本文为2121</span><br><span class="line"></span><br><span class="line"><span class="comment"># 21 is registered to ftp, but also used by fsp</span></span><br><span class="line">ftp             2121/tcp</span><br><span class="line">ftp             2121/udp          fsp fspd</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
