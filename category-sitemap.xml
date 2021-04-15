@@ -9,6 +9,13 @@
 
 
     <url>
+        <loc>https://blog.dlzhang.com/overview/%25E5%25BD%2592%25E6%25A1%25A3/</loc>
+        <lastmod>2021-04-15T01:22:07.439Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://blog.dlzhang.com/overview/Linux/</loc>
         <lastmod>2021-04-14T08:46:48.223Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -32,13 +39,6 @@
     <url>
         <loc>https://blog.dlzhang.com/overview/LVM/</loc>
         <lastmod>2021-04-14T08:45:00.812Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.dlzhang.com/overview/%25E5%25BD%2592%25E6%25A1%25A3/</loc>
-        <lastmod>2021-04-14T08:44:58.504Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

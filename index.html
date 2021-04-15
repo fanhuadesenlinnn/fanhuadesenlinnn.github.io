@@ -655,81 +655,6 @@ window.addEventListener('load', () => {
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/12/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="曹恒源">
-      <meta itemprop="description" content="啦啦啦啦啦">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="弈">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/12/" class="post-title-link" itemprop="url">Linux 工具之crontab</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发布：</span>
-
-      <time title="创建时间：2011-02-27 09:34:36" itemprop="dateCreated datePublished" datetime="2011-02-27T09:34:36+08:00">2011-02-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类：</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/overview/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>crontab</p>
-          <!--noindex-->
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/11/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -804,7 +729,7 @@ window.addEventListener('load', () => {
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/15/">
+    <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/14/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -817,7 +742,7 @@ window.addEventListener('load', () => {
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/15/" class="post-title-link" itemprop="url">Centos 7 中的Yum</a>
+          <a href="/posts/14/" class="post-title-link" itemprop="url">Linux 系统优化</a>
         </h2>
 
         <div class="post-meta-container">
@@ -852,10 +777,111 @@ window.addEventListener('load', () => {
     <div class="post-body" itemprop="articleBody">
           <span id="more"></span>
 
-<h2 id="只下载不安装"><a href="#只下载不安装" class="headerlink" title="只下载不安装"></a>只下载不安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum install --downloadonly --downloaddir=/usr/package docker</span></span><br></pre></td></tr></table></figure>
+<p><strong>目录</strong></p>
+<h1 id="关闭selinux"><a href="#关闭selinux" class="headerlink" title="关闭selinux"></a>关闭<code>selinux</code></h1><p>编辑<code>/etc/selinux/config</code>文件</p>
+<p>将<code>SELINUX=enforcing</code>改为<code>SELINUX=disabled</code> ，保存后退出,重启系统生效</p>
+<h1 id="调整内核参数文件-etc-syctl-conf"><a href="#调整内核参数文件-etc-syctl-conf" class="headerlink" title="调整内核参数文件/etc/syctl.conf"></a>调整内核参数文件<code>/etc/syctl.conf</code></h1><ul>
+<li><p><code>net.ipv4.tcp_syncookies = 1</code></p>
+<p>  表示开启SYNCookies。当出现SYN等待队列溢出时，启用cookies来处理，可防范少量SYN攻击，默认为0，表示关闭；</p>
+</li>
+<li><p><code>net.ipv4.tcp_tw_reuse = 1</code></p>
+<p>  表示开启重用。允许将TIME-WAIT sockets重新用于新的TCP连接，默认为0，表示关闭；</p>
+</li>
+<li><p><code>net.ipv4.tcp_tw_recycle = 1</code></p>
+<p>  表示开启TCP连接中TIME-WAIT sockets的快速回收，默认为0，表示关闭。</p>
+</li>
+<li><p><code>net.ipv4.tcp_fin_timeout = 30</code></p>
+<p>  表示如果套接字由本端要求关闭，这个参数决定了它保持在FIN-WAIT-2状态的时间。</p>
+</li>
+<li><p><code>net.ipv4.tcp_keepalive_time = 1200</code></p>
+<p>  表示当keepalive起用的时候，TCP发送keepalive消息的频度。缺省是2小时，改为20分钟。</p>
+</li>
+<li><p><code>net.ipv4.ip_local_port_range = 1024 65000</code></p>
+<p>  表示用于向外连接的端口范围。缺省情况下很小：32768到61000，改为1024到65000。</p>
+</li>
+<li><p><code>net.ipv4.tcp_max_syn_backlog = 8192</code></p>
+<p>  表示SYN队列的长度，默认为1024，加大队列长度为8192，可以容纳更多等待连接的网络连接数。</p>
+</li>
+<li><p><code>net.nf_conntrack_max = 655360</code></p>
+<p>  在内核内存中netfilter可以同时处理的“任务”（连接跟踪条目）</p>
+</li>
+</ul>
 
-<h3 id="强制安装rpm包"><a href="#强制安装rpm包" class="headerlink" title="强制安装rpm包"></a>强制安装rpm包</h3><p>安装，这边有个坑，可能跟你先后顺序有关系。因此我们采用一种强制安装方法进行安装！</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh <span class="params">--force</span> *<span class="string">.rpm</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="曹恒源">
+      <meta itemprop="description" content="啦啦啦啦啦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="弈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/12/" class="post-title-link" itemprop="url">Linux 工具之crontab</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发布：</span>
+
+      <time title="创建时间：2011-02-27 09:34:36" itemprop="dateCreated datePublished" datetime="2011-02-27T09:34:36+08:00">2011-02-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类：</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/overview/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>crontab</p>
+          <!--noindex-->
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1060,109 +1086,6 @@ window.addEventListener('load', () => {
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/14/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="曹恒源">
-      <meta itemprop="description" content="啦啦啦啦啦">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="弈">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/14/" class="post-title-link" itemprop="url">Linux 系统优化</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发布：</span>
-
-      <time title="创建时间：2011-02-27 09:34:36" itemprop="dateCreated datePublished" datetime="2011-02-27T09:34:36+08:00">2011-02-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类：</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/overview/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <span id="more"></span>
-
-<p><strong>目录</strong></p>
-<h1 id="关闭selinux"><a href="#关闭selinux" class="headerlink" title="关闭selinux"></a>关闭<code>selinux</code></h1><p>编辑<code>/etc/selinux/config</code>文件</p>
-<p>将<code>SELINUX=enforcing</code>改为<code>SELINUX=disabled</code> ，保存后退出,重启系统生效</p>
-<h1 id="调整内核参数文件-etc-syctl-conf"><a href="#调整内核参数文件-etc-syctl-conf" class="headerlink" title="调整内核参数文件/etc/syctl.conf"></a>调整内核参数文件<code>/etc/syctl.conf</code></h1><ul>
-<li><p><code>net.ipv4.tcp_syncookies = 1</code></p>
-<p>  表示开启SYNCookies。当出现SYN等待队列溢出时，启用cookies来处理，可防范少量SYN攻击，默认为0，表示关闭；</p>
-</li>
-<li><p><code>net.ipv4.tcp_tw_reuse = 1</code></p>
-<p>  表示开启重用。允许将TIME-WAIT sockets重新用于新的TCP连接，默认为0，表示关闭；</p>
-</li>
-<li><p><code>net.ipv4.tcp_tw_recycle = 1</code></p>
-<p>  表示开启TCP连接中TIME-WAIT sockets的快速回收，默认为0，表示关闭。</p>
-</li>
-<li><p><code>net.ipv4.tcp_fin_timeout = 30</code></p>
-<p>  表示如果套接字由本端要求关闭，这个参数决定了它保持在FIN-WAIT-2状态的时间。</p>
-</li>
-<li><p><code>net.ipv4.tcp_keepalive_time = 1200</code></p>
-<p>  表示当keepalive起用的时候，TCP发送keepalive消息的频度。缺省是2小时，改为20分钟。</p>
-</li>
-<li><p><code>net.ipv4.ip_local_port_range = 1024 65000</code></p>
-<p>  表示用于向外连接的端口范围。缺省情况下很小：32768到61000，改为1024到65000。</p>
-</li>
-<li><p><code>net.ipv4.tcp_max_syn_backlog = 8192</code></p>
-<p>  表示SYN队列的长度，默认为1024，加大队列长度为8192，可以容纳更多等待连接的网络连接数。</p>
-</li>
-<li><p><code>net.nf_conntrack_max = 655360</code></p>
-<p>  在内核内存中netfilter可以同时处理的“任务”（连接跟踪条目）</p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/439999/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1217,11 +1140,146 @@ window.addEventListener('load', () => {
 
 </blockquote>
 
-<p><strong><center>aldskfjlsajfd</center></strong></p>
+
+<p>** 视频</p>
+<video src="/images/半马-无声音(3分钟).mp4" preload="metadata" controlslist="nodownload" controls playsinline poster=""></video>
+
+
 <blockquote class="blockquote-center">
-<p>lakdsfl<br>aldskfj;ladfskj<br>aldskfj;ladfks<br>aldskjf</p>
+<p>Something</p>
 
 </blockquote>
+<!-- Tag Alias -->
+<blockquote class="blockquote-center">
+<p>Something</p>
+
+</blockquote>
+
+<blockquote class="blockquote-center">
+<p>Elegant in code, simple in core</p>
+
+</blockquote>
+
+
+
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">next/_config.yml</span></span><br><span class="line"><span class="attr">pdf:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Default height</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">500px</span></span><br></pre></td></tr></table></figure>
+
+<div class="pdf-container" data-target="url" data-height="[height]"></div>
+
+
+<div class="tabs" id="unique-name"><ul class="nav-tabs"><li class="tab active"><a href="#unique-name-1"><i class="fa fa-icon]"></i>[Tab caption] [</a></li></ul><div class="tab-content"><div class="tab-pane active" id="unique-name-1"><p>Any content (support inline tags too).</p></div></div></div>
+
+
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><div class="link-grid"><div class="link-grid-container">
+<div class="link-grid-image" style="background-image: url(/images/apple-touch-icon-next.png);"></div>
+<p>Theme NexT</p><p>Stay Simple. Stay NexT.</p>
+<a target="_blank" rel="noopener" href="https://theme-next.js.org/"></a>
+</div><div class="link-grid-container">
+<div class="link-grid-image" style="background-image: url(/images/apple-touch-icon-next.png);"></div>
+<p>Theme NexT</p><p>Stay Simple. Stay NexT.</p>
+<a target="_blank" rel="noopener" href="https://theme-next.js.org/"></a>
+</div><div class="link-grid-container">
+<div class="link-grid-image" style="background-image: url(/images/apple-touch-icon-next.png);"></div>
+<p>Theme NexT</p><p>Stay Simple. Stay NexT.</p>
+<a target="_blank" rel="noopener" href="https://theme-next.js.org/"></a>
+</div><div class="link-grid-container">
+<div class="link-grid-image" style="background-image: url(/images/apple-touch-icon-next.png);"></div>
+<p>Theme NexT</p><p>Stay Simple. Stay NexT.</p>
+<a target="_blank" rel="noopener" href="https://theme-next.js.org/"></a>
+</div></div>
+
+
+<h1 id="集体照"><a href="#集体照" class="headerlink" title="集体照"></a>集体照</h1><div class="group-picture"><div class="group-picture-row"><div class="group-picture-column"><img data-src="/images/next.svg"></div></div><div class="group-picture-row"><div class="group-picture-column"><img data-src="/images/next.svg"></div><div class="group-picture-column"><img data-src="/images/next.svg"></div><div class="group-picture-column"><img data-src="/images/next.svg"></div></div></div>
+
+<h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><div class="note info"><h4 id="Info-Header"><a href="#Info-Header" class="headerlink" title="Info Header"></a>Info Header</h4><p><strong>Welcome</strong> to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo!</a></p>
+</div>
+
+<h1 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h1><p><a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/tag-plugins/mermaid.html">https://theme-next.js.org/docs/tag-plugins/mermaid.html</a></p>
+<h1 id="标签-tab"><a href="#标签-tab" class="headerlink" title="标签 tab"></a>标签 tab</h1><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">Settings</span></span><br><span class="line"><span class="string">next/_config.yml</span></span><br><span class="line"><span class="attr">tabs:</span></span><br><span class="line">  <span class="attr">transition:</span></span><br><span class="line">    <span class="attr">tabs:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">labels:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/tag-plugins/tabs.html">https://theme-next.js.org/docs/tag-plugins/tabs.html</a></p>
+<div class="tabs" id="sixth-unique-name"><ul class="nav-tabs"><li class="tab active"><a href="#sixth-unique-name-1"><i class="fa fa-text-width"></i>Solution 1</a></li><li class="tab"><a href="#sixth-unique-name-2"><i class="fa fa-font"></i>Solution 2</a></li><li class="tab"><a href="#sixth-unique-name-3"><i class="fa fa-bold"></i>Solution 3</a></li></ul><div class="tab-content"><div class="tab-pane active" id="sixth-unique-name-1"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="sixth-unique-name-2"><p><strong>This is Tab 2.</strong></p></div><div class="tab-pane" id="sixth-unique-name-3"><p><strong>This is Tab 3.</strong></p></div></div></div>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.dlzhang.com/posts/15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="曹恒源">
+      <meta itemprop="description" content="啦啦啦啦啦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="弈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/15/" class="post-title-link" itemprop="url">Centos 7 中的Yum</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发布：</span>
+
+      <time title="创建时间：2011-02-27 09:34:36" itemprop="dateCreated datePublished" datetime="2011-02-27T09:34:36+08:00">2011-02-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类：</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/overview/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <span id="more"></span>
+
+<h2 id="只下载不安装"><a href="#只下载不安装" class="headerlink" title="只下载不安装"></a>只下载不安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># yum install --downloadonly --downloaddir=/usr/package docker</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="强制安装rpm包"><a href="#强制安装rpm包" class="headerlink" title="强制安装rpm包"></a>强制安装rpm包</h3><p>安装，这边有个坑，可能跟你先后顺序有关系。因此我们采用一种强制安装方法进行安装！</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh <span class="params">--force</span> *<span class="string">.rpm</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
